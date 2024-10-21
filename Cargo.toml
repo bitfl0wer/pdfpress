@@ -1,0 +1,17 @@
+[package]
+name = "pdfpress"
+version = "1.0.0"
+edition = "2021"
+authors = ["bitfl0wer"]
+description = "Simple command line tool to reduce the file size of .pdf files."
+license = "MPL-2.0"
+
+[dependencies]
+anyhow = "1.0.90"
+clap = { version = "4.5.20", features = ["derive"] }
+lazy_static = "1.5.0"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = "s"
